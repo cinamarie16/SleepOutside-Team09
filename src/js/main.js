@@ -13,8 +13,6 @@ import Alert from "./Alert.js";
 
 updateCartIcon();
 
-const dataSource = new ProductData("tents");
-const productList = new ProductList(".product-list", dataSource);
 productList.init();
 
 const alertSystem = new Alert("main");
