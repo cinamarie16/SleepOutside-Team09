@@ -2,15 +2,11 @@ export default class ProductList {
   constructor(selector, dataSource) {
     this.productList = document.querySelector(selector);
     this.dataSource = dataSource;
-    this.productIds = ["880RR", "985RF", "985PR", "344YJ"];
   }
 
   async init() {
     const products = await this.dataSource.getData();
-    const availableProducts = products.filter((product) =>
-      this.productIds.includes(product.Id),
-    );
-    this.renderList(availableProducts);
+    this.renderList(products);
   }
 
   renderList(products) {
